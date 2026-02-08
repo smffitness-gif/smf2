@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Page</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+        .order-box {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px gray;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        button {
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        h2 {
+            text-align: center;
+        }
+        #total {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="order-box">
+    <h2>Order Product</h2>
+
+    <label>Product Name</label>
+    <input type="text" id="product" value="whey PROTINE" readonly>
+
+    
+
+    <label>Quantity</label>
+    <select id="qty" onchange="calculate()">
+        
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+
+    <div id="total"></div>
+
+    <label>Your Name</label>
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <label>Address</label>
+    <input type="text" id="address" placeholder="Enter address">
+
+    <button onclick="placeOrder()">Place Order</button>
+
+    <p id="msg"></p>
+</div>
+
+<script src="order.js">
+    function calculate() {
+    let price = document.getElementById("price").value;
+    let qty = document.getElementById("qty").value;
+    let total = price * qty;
+
+    document.getElementById("total").innerText = "Total: ₹" + total;
+}
+
+function placeOrder() {
+    let name = document.getElementById("name").value;
+    let address = document.getElementById("address").value;
+
+    if (name === "" || address === "") {
+        alert("Please fill all details");
+        return;
+    }
+
+    document.getElementById("msg").innerText =
+        "✅ Order placed successfully! Thank you, " + name;
+}
+
+</script>
+</body>
+</html>

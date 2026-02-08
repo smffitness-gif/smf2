@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px;
+            gap: 40px;
+        }
+
+        /* LEFT IMAGE */
+        .product-image {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .product-image img {
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #555;
+        }
+
+        /* RIGHT CONTENT */
+        .product-details {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .product-details h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 26px;
+            color: #00ff99;
+            margin: 15px 0;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .order-btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff9900;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .order-btn:hover {
+            background-color: blue;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-details {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="product-container">
+
+        <!-- PRODUCT IMAGE -->
+        <div class="product-image">
+            <img src="img/creatin/711l1FkCLaL._AC_UL480_FMwebp_QL65_.webp" alt="Creatine">
+        </div>
+
+        <!-- PRODUCT DETAILS -->
+        <div class="product-details">
+            <h1>Creatine Monohydrate</h1>
+
+            <div class="price">₹ 1,499</div>
+
+            <div class="description">
+                High-quality creatine monohydrate for increased strength, muscle growth,
+                and improved workout performance.
+            </div>
+
+            <ul>
+                <li>✔ Improves strength & power</li>
+                <li>✔ Faster muscle recovery</li>
+                <li>✔ Lab tested & safe</li>
+                <li>✔ Suitable for all athletes</li>
+            </ul>
+
+            <button class="order-btn" id="order-btn" onclick="order()">ORDER NOW</button>
+        </div>
+
+    </div>
+    <script src="smf.js"></script>
+</body>
+
+</html>
